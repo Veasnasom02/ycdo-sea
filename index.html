@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ផែនការមេសម្រាប់ការបង្កើនសមាជិកសមាគម</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/17.0.2/umd/react.development.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/17.0.2/umd/react-dom.development.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/recharts/2.12.2/Recharts.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-50 p-6">
+    <header class="mb-8">
+        <h1 class="text-3xl font-bold text-gray-900 mb-2">ផែនការមេសម្រាប់ការបង្កើនសមាជិកសមាគម</h1>
+    </header>
+
+    <!-- Stats Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+        <div class="card">
+            <div class="flex items-center space-x-4">
+                <svg class="icon text-blue-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="9" cy="7" r="4"></circle>
+                    <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+                <div>
+                    <p class="text-sm text-gray-500">គោលដៅសមាជិក (៥ឆ្នាំ)</p>
+                    <h3 class="text-2xl font-bold">៥០,០០០ នាក់</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="flex items-center space-x-4">
+                <svg class="icon text-green-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                </svg>
+                <div>
+                    <p class="text-sm text-gray-500">វគ្គបណ្តុះបណ្តាល (១ឆ្នាំ)</p>
+                    <h3 class="text-2xl font-bold">២៤ វគ្គ</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="flex items-center space-x-4">
+                <svg class="icon text-yellow-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="12" y1="1" x2="12" y2="23"></line>
+                    <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                </svg>
+                <div>
+                    <p class="text-sm text-gray-500">ថវិកាសរុប (១ឆ្នាំ)</p>
+                    <h3 class="text-2xl font-bold">$២៣៥,៥០០</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tabs Section -->
+    <div class="tabs">
+        <div class="tab-buttons grid grid-cols-6 gap-2 mb-4">
+            <button class="tab-button active" data-tab="vision">ចក្ខុវិស័យ</button>
+            <button class="tab-button" data-tab="goals">គោលដៅ</button>
+            <button class="tab-button" data-tab="online">ផ្នែកអនឡាញ</button>
+            <button class="tab-button" data-tab="offline">ផ្នែកក្រៅប្រព័ន្ធ</button>
+            <button class="tab-button" data-tab="budget">ថវិកា</button>
+            <button class="tab-button" data-tab="metrics">ការវាស់វែង</button>
+        </div>
+
+        <!-- Vision Tab -->
+        <div id="vision" class="tab-content active">
+            <div class="card">
+                <h2 class="text-xl font-bold mb-4">ចក្ខុវិស័យ និងបេសកកម្ម</h2>
+                <div class="space-y-4">
+                    <div>
+                        <h3 class="font-bold mb-2 flex items-center">
+                            <svg class="w-5 h-5 mr-2 text-blue-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                <circle cx="12" cy="12" r="3"></circle>
+                            </svg>
+                            ចក្ខុវិស័យ
+                        </h3>
+                        <p class="text-gray-600">
+                            ក្លាយជាសមាគមឈានមុខគេក្នុងការអភិវឌ្ឍសមត្ថភាពយុវជន និងការផ្លាស់ប្តូរសង្គមប្រកបដោយចីរភាព តាមរយៈការអប់រំ ការបណ្តុះបណ្តាល និងការចែករំលែកចំណេះដឹង។
+                        </p>
+                    </div>
+                    <div>
+                        <h3 class="font-bold mb-2 flex items-center">
+                            <svg class="w-5 h-5 mr-2 text-green-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                            </svg>
+                            បេសកកម្ម
+                        </h3>
+                        <ul class="list-disc list-inside text-gray-600 space-y-2">
+                            <li>ផ្តល់ឱកាសសិក្សា និងអភិវឌ្ឍខ្លួនដល់យុវជនគ្រប់រូប តាមរយៈការបណ្តុះបណ្តាលប្រកបដោយគុណភាព ទាំងតាមប្រព័ន្ធអនឡាញ និងក្រៅប្រព័ន្ធអនឡាញ</li>
+                            <li>លើកកម្ពស់ការចូលរួមរបស់យុវជនក្នុងការអភិវឌ្ឍសហគមន៍</li>
+                            <li>បង្កើតបណ្តាញសហការ និងភាពជាដៃគូជាមួយអង្គការ ស្ថាប័នពាក់ព័ន្ធ</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Goals Tab -->
+        <div id="goals" class="tab-content">
+            <div class="grid gap-4 grid-cols-1">
+                <!-- Short-term Goals -->
+                <div class="card">
+                    <h2 class="text-xl font-bold mb-4">គោលដៅរយៈពេលខ្លី (១ឆ្នាំ)</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div>
+                            <h3 class="font-bold mb-2">១. ការពង្រីកសមាជិក</h3>
+                            <ul class="list-disc list-inside text-sm text-gray-600">
+                                <li>បង្កើនចំនួនសមាជិកឱ្យបាន ៥០០០នាក់</li>
+                                <li>មានសមាជិកសកម្មយ៉ាងតិច ៨០%</li>
+                                <li>គ្របដណ្តប់យ៉ាងតិច ១០ខេត្តក្រុង</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="font-bold mb-2">២. កម្មវិធីបណ្តុះបណ្តាល</h3>
+                            <ul class="list-disc list-inside text-sm text-gray-600">
+                                <li>រៀបចំវគ្គបណ្តុះបណ្តាលយ៉ាងតិច ២៤វគ្គក្នុងមួយឆ្នាំ</li>
+                                <li>បង្កើតវគ្គសិក្សាអនឡាញយ៉ាងតិច ១២វគ្គ</li>
+                                <li>សម្រេចបានអត្រាបញ្ចប់ការសិក្សា ៨៥%</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="font-bold mb-2">៣. ការអភិវឌ្ឍប្រព័ន្ធឌីជីថល</h3>
+                            <ul class="list-disc list-inside text-sm text-gray-600">
+                                <li>បង្កើតវេបសាយមានមុខងារពេញលេញ</li>
+                                <li>មានអ្នកតាមដានលើបណ្តាញសង្គមសរុប ២០,០០០នាក់</li>
+                                <li>ផលិតមាតិកាអប់រំយ៉ាងតិច ១០០ផ្នែក</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Medium-term Goals -->
+                <div class="card">
+                    <h2 class="text-xl font-bold mb-4">គោលដៅរយៈពេលមធ្យម (៣ឆ្នាំ)</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div>
+                            <h3 class="font-bold mb-2">១. ការពង្រីកសមាជិក</h3>
+                            <ul class="list-disc list-inside text-sm text-gray-600">
+                                <li>បង្កើនចំនួនសមាជិកឱ្យបាន ២០,០០០នាក់</li>
+                                <li>គ្របដណ្តប់គ្រប់ខេត្តក្រុង</li>
+                                <li>បង្កើតសាខាយ៉ាងតិច ៥កន្លែង</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="font-bold mb-2">២. កម្មវិធីបណ្តុះបណ្តាល</h3>
+                            <ul class="list-disc list-inside text-sm text-gray-600">
+                                <li>បង្កើតមជ្ឈមណ្ឌលបណ្តុះបណ្តាលផ្ទាល់ខ្លួន</li>
+                                <li>បង្កើតកម្មវិធីសិក្សាជំនាញថ្មីៗ</li>
+                                <li>បង្កើតកម្មវិធីផ្លាស់ប្តូរបទពិសោធន៍អន្តរជាតិ</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="font-bold mb-2">៣. ការអភិវឌ្ឍស្ថាប័ន</h3>
+                            <ul class="list-disc list-inside text-sm text-gray-600">
+                                <li>ទទួលបានការទទួលស្គាល់ជាផ្លូវការពីក្រសួងពាក់ព័ន្ធ</li>
+                                <li>បង្កើតប្រព័ន្ធគ្រប់គ្រងគុណភាព</li>
+                              <li>បង្កើតមូលនិធិអភិវឌ្ឍន៍សមាគម</li>
+                          </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Long-term Goals -->
+                <div class="card">
+                    <h2 class="text-xl font-bold mb-4">គោលដៅរយៈពេលវែង (៥ឆ្នាំ)</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div>
+                            <h3 class="font-bold mb-2">១. ការពង្រីកសមាគម</h3>
+                            <ul class="list-disc list-inside text-sm text-gray-600">
+                                <li>ក្លាយជាសមាគមគំរូថ្នាក់ជាតិ</li>
+                                <li>បង្កើតបណ្តាញសហការអន្តរជាតិ</li>
+                                <li>មានសមាជិកសកម្មយ៉ាងតិច ៥០,០០០នាក់</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="font-bold mb-2">២. ការអភិវឌ្ឍកម្មវិធី</h3>
+                            <ul class="list-disc list-inside text-sm text-gray-600">
+                                <li>បង្កើតសាកលវិទ្យាល័យបច្ចេកវិទ្យា</li>
+                                <li>បង្កើតមជ្ឈមណ្ឌលស្រាវជ្រាវ និងអភិវឌ្ឍន៍</li>
+                                <li>បង្កើតកម្មវិធីអភិវឌ្ឍន៍សហគមន៍</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="font-bold mb-2">៣. ភាពជាអ្នកដឹកនាំ</h3>
+                            <ul class="list-disc list-inside text-sm text-gray-600">
+                                <li>ក្លាយជាអង្គការដឹកនាំក្នុងការអភិវឌ្ឍយុវជន</li>
+                                <li>មានឥទ្ធិពលលើគោលនយោបាយយុវជនថ្នាក់ជាតិ</li>
+                                <li>បង្កើតគំរូអភិវឌ្ឍន៍ចីរភាព</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Online Tab -->
+        <div id="online" class="tab-content">
+            <div class="card mb-4">
+                <h2 class="text-xl font-bold mb-4">១. ការបង្កើតវេបសាយ</h2>
+                <div class="space-y-6">
+                    <div>
+                        <h3 class="font-bold mb-3">មុខងារសំខាន់ៗ</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                            <div>
+                                <h4 class="font-medium mb-2">ប្រព័ន្ធចុះឈ្មោះ/ចូលប្រើប្រាស់</h4>
+                                <ul class="list-disc list-inside text-sm text-gray-600">
+                                    <li>ការចុះឈ្មោះងាយស្រួល</li>
+                                    <li>ការផ្ទៀងផ្ទាត់តាមអ៊ីមែល</li>
+                                    <li>ការកំណត់ព័ត៌មានផ្ទាល់ខ្លួន</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-medium mb-2">មុខងារសង្គម</h4>
+                                <ul class="list-disc list-inside text-sm text-gray-600">
+                                    <li>ការបង្ហោះអត្ថបទ និងរូបភាព</li>
+                                    <li>ការចូលចិត្ត និងការចែករំលែក</li>
+                                    <li>ការបញ្ចេញមតិ</li>
+                                    <li>ការផ្ញើសារឯកជន</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-medium mb-2">ការសិក្សាអនឡាញ</h4>
+                                <ul class="list-disc list-inside text-sm text-gray-600">
+                                    <li>វគ្គសិក្សាតាមវីដេអូ</li>
+                                    <li>ឯកសារសិក្សា PDF</li>
+                                    <li>ការធ្វើតេស្ត និងលំហាត់</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="font-bold mb-3">ការអភិវឌ្ឍវេបសាយ</h3>
+                        <div class="space-y-4">
+                            <div>
+                                <h4 class="font-medium mb-2">ដំណាក់កាលទី១ (ខែ 1-2)</h4>
+                                <ul class="list-disc list-inside text-sm text-gray-600">
+                                    <li>រចនាគម្រោង និងរូបរាងវេបសាយ</li>
+                                    <li>បង្កើតមុខងារមូលដ្ឋាន</li>
+                                    <li>ធ្វើតេស្តប្រព័ន្ធ</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-medium mb-2">ដំណាក់កាលទី២ (ខែ 3-4)</h4>
+                                <ul class="list-disc list-inside text-sm text-gray-600">
+                                    <li>បន្ថែមមុខងារសង្គម</li>
+                                    <li>បង្កើតប្រព័ន្ធសិក្សាអនឡាញ</li>
+                                    <li>ធ្វើឱ្យប្រសើរឡើងតាមមតិយោបល់អ្នកប្រើប្រាស់</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-medium mb-2">ដំណាក់កាលទី៣ (ខែ 5-6)</h4>
+                                <ul class="list-disc list-inside text-sm text-gray-600">
+                                    <li>បន្ថែមមុខងារផ្សាយផ្ទាល់</li>
+                                    <li>ធ្វើឱ្យប្រសើរឡើងនូវសុវត្ថិភាព</li>
+                                    <li>បង្កើនល្បឿន និងប្រសិទ្ធភាព</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2 class="text-xl font-bold mb-4">២. យុទ្ធសាស្ត្រផ្សព្វផ្សាយតាមបណ្តាញសង្គម</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="space-y-2">
+                        <h3 class="font-bold text-lg">Facebook</h3>
+                        <ul class="list-disc list-inside text-sm text-gray-600">
+                            <li>បង្កើតទំព័រ និងក្រុមផ្លូវការ</li>
+                            <li>ផលិតមាតិកាប្រចាំថ្ងៃ</li>
+                            <li>អត្ថបទអប់រំ</li>
+                            <li>វីដេអូខ្លីៗ</li>
+                            <li>រូបភាពគួរឱ្យចាប់អារម្មណ៍</li>
+                            <li>ធ្វើការផ្សព្វផ្សាយដោយបង់ប្រាក់</li>
+                            <li>រៀបចំការប្រកួតប្រជែង និងកម្មវិធីផ្សេងៗ</li>
+                        </ul>
+                    </div>
+
+                    <div class="space-y-2">
+                        <h3 class="font-bold text-lg">TikTok</h3>
+                        <ul class="list-disc list-inside text-sm text-gray-600">
+                            <li>បង្កើតគណនីផ្លូវការ</li>
+                            <li>ផលិតវីដេអូខ្លីៗទាក់ទាញ</li>
+                            <li>ចំណេះដឹងទូទៅ</li>
+                            <li>បទពិសោធន៍សមាជិក</li>
+                            <li>ការណែនាំពីសកម្មភាពសមាគម</li>
+                            <li>ប្រើប្រាស់ Hashtag ត្រឹមត្រូវ</li>
+                            <li>ចូលរួមក្នុងបណ្តាញ TikTok ដែលពាក់ព័ន្ធ</li>
+                        </ul>
+                    </div>
+
+                    <div class="space-y-2">
+                        <h3 class="font-bold text-lg">YouTube</h3>
+                        <ul class="list-disc list-inside text-sm text-gray-600">
+                            <li>បង្កើតឆាណែល</li>
+                            <li>ផលិតវីដេអូគុណភាពខ្ពស់</li>
+                            <li>វគ្គបណ្តុះបណ្តាលឥតគិតថ្លៃ</li>
+                            <li>ការសម្ភាសន៍ជាមួយសមាជិកជោគជ័យ</li>
+                            <li>ព័ត៌មានអំពីសកម្មភាពសមាគម</li>
+                            <li>បង្កើតបញ្ជីចាក់ទៅតាមប្រធានបទ</li>
+                            <li>ធ្វើការ SEO សម្រាប់វីដេអូ</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Offline Tab -->
+        <div id="offline" class="tab-content">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="card">
+                    <h2 class="text-xl font-bold mb-4">១. កម្មវិធីបណ្តុះបណ្តាលតាមមូលដ្ឋាន</h2>
+                    <div class="space-y-4">
+                        <div>
+                            <h3 class="font-medium mb-2">ការរៀបចំវគ្គបណ្តុះបណ្តាល</h3>
+                            <ul class="list-disc list-inside text-sm text-gray-600">
+                                <li>កំណត់ប្រធានបទសំខាន់ៗ</li>
+                                <li>រៀបចំកម្មវិធីសិក្សា</li>
+                                <li>ជ្រើសរើសគ្រូបង្គោល</li>
+                                <li>រៀបចំឯកសារបណ្តុះបណ្តាល</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3 class="font-medium mb-2">ទីតាំងគោលដៅ</h3>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div>
+                                    <h4 class="font-medium mb-2">សាលារៀន</h4>
+                                    <ul class="list-disc list-inside text-sm text-gray-600">
+                                        <li>វិទ្យាល័យ</li>
+                                        <li>សាកលវិទ្យាល័យ</li>
+                                        <li>មជ្ឈមណ្ឌលបណ្តុះបណ្តាលវិជ្ជាជីវៈ</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium mb-2">សហគមន៍</h4>
+                                    <ul class="list-disc list-inside text-sm text-gray-600">
+                                        <li>សាលាឃុំ</li>
+                                        <li>មជ្ឈមណ្ឌលសហគមន៍</li>
+                                        <li>បណ្ណាល័យសាធារណៈ</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h2 class="text-xl font-bold mb-4">ការអនុវត្ត</h2>
+                    <div class="space-y-4">
+                        <div>
+                          <h3 class="font-medium mb-2">១. ការត្រៀមរៀបចំ</h3>
+                            <ul class="list-disc list-inside text-sm text-gray-600">
+                                <li>ទំនាក់ទំនងជាមួយអាជ្ញាធរមូលដ្ឋាន</li>
+                                <li>សុំការអនុញ្ញាត</li>
+                                <li>រៀបចំកាលវិភាគ</li>
+                                <li>ត្រៀមសម្ភារៈ</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="font-medium mb-2">២. ការអនុវត្តជាក់ស្តែង</h3>
+                            <ul class="list-disc list-inside text-sm text-gray-600">
+                                <li>ការផ្សព្វផ្សាយមុនពេលចាប់ផ្តើម</li>
+                                <li>ការចុះឈ្មោះអ្នកចូលរួម</li>
+                                <li>ការបណ្តុះបណ្តាល</li>
+                                <li>ការវាយតម្លៃ និងផ្តល់វិញ្ញាបនបត្រ</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="font-medium mb-2">៣. ការតាមដាន</h3>
+                            <ul class="list-disc list-inside text-sm text-gray-600">
+                                <li>ប្រមូលមតិយោបល់</li>
+                                <li>វាយតម្លៃលទ្ធផល</li>
+                                <li>កែលម្អកម្មវិធី</li>
+                                <li>រក្សាទំនាក់ទំនងជាមួយអ្នកចូលរួម</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h2 class="text-xl font-bold mb-4">២. ការគ្រប់គ្រងទិន្នន័យ</h2>
+                    <div class="space-y-4">
+                        <ul class="list-disc list-inside text-sm text-gray-600">
+                            <li>ប្រព័ន្ធកត់ត្រាសមាជិក</li>
+                            <li>ការតាមដានការចូលរួម</li>
+                            <li>របាយការណ៍វឌ្ឍនភាព</li>
+                            <li>ការវិភាគទិន្នន័យ</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Budget Tab -->
+        <div id="budget" class="tab-content">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="card">
+                    <h2 class="text-xl font-bold mb-4">ការប៉ាន់ស្មានថវិកាសរុប (១ឆ្នាំដំបូង)</h2>
+                    <div class="space-y-4">
+                        <div>
+                            <h3 class="font-bold mb-2">១. One-time payment investment</h3>
+                            <div class="overflow-x-auto">
+                                <table class="min-w-full bg-white">
+                                    <thead>
+                                        <tr class="bg-gray-100">
+                                            <th class="py-2 px-4 text-left">ប្រភេទ</th>
+                                            <th class="py-2 px-4 text-left">បរិយាយ</th>
+                                            <th class="py-2 px-4 text-right">ចំនួនទឹកប្រាក់ ($)</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="py-2 px-4" rowspan="4">វេបសាយ និងកម្មវិធី</td>
+                                            <td class="py-2 px-4">ការអភិវឌ្ឍវេបសាយ</td>
+                                            <td class="py-2 px-4 text-right">6,000</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="py-2 px-4">ការរចនា UI/UX</td>
+                                            <td class="py-2 px-4 text-right">2,000</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="py-2 px-4">Domain និង Hosting</td>
+                                            <td class="py-2 px-4 text-right">500</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="py-2 px-4">ប្រព័ន្ធសន្តិសុខ</td>
+                                            <td class="py-2 px-4 text-right">1,500</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="py-2 px-4 font-bold" colspan="2">សរុបរង</td>
+                                            <td class="py-2 px-4 text-right font-bold">10,000</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="py-2 px-4" rowspan="5">Mobile App</td>
+                                            <td class="py-2 px-4">ការវិភាគ និងរចនា</td>
+                                            <td class="py-2 px-4 text-right">3,000</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="py-2 px-4">ការអភិវឌ្ឍកម្មវិធី iOS</td>
+                                            <td class="py-2 px-4 text-right">10,000</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="py-2 px-4">ការអភិវឌ្ឍកម្មវិធី Android</td>
+                                            <td class="py-2 px-4 text-right">10,000</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="py-2 px-4">ការធ្វើតេស្ត និងកែលម្អ</td>
+                                            <td class="py-2 px-4 text-right">2,000</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="py-2 px-4">ការដាក់លើ App Store/Play Store</td>
+                                            <td class="py-2 px-4 text-right">500</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="py-2 px-4 font-bold" colspan="2">សរុបរង</td>
+                                            <td class="py-2 px-4 text-right font-bold">25,500</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="py-2 px-4" rowspan="2">សម្ភារៈបរិក្ខារ</td>
+                                            <td class="py-2 px-4">កុំព្យូទ័រ និងឧបករណ៍ការិយាល័យ</td>
+                                            <td class="py-2 px-4 text-right">3,000</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="py-2 px-4">ឧបករណ៍ថតវីដេអូ និងសម្លេង</td>
+                                            <td class="py-2 px-4 text-right">2,000</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="py-2 px-4 font-bold" colspan="2">សរុបរង</td>
+                                            <td class="py-2 px-4 text-right font-bold">5,000</td>
+                                        </tr>
+                                    </tbody>
+                                    <tfoot>
+                                        <tr class="bg-gray-100">
+                                            <td class="py-2 px-4 font-bold" colspan="2">សរុបការចំណាយដើមទុន</td>
+                                            <td class="py-2 px-4 text-right font-bold">40,500</td>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h2 class="text-xl font-bold mb-4">២. ការចំណាយផ្នែកប្រតិបត្តិការ</h2>
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full bg-white">
+                            <thead>
+                                <tr class="bg-gray-100">
+                                    <th class="py-2 px-4 text-left">ប្រភេទ</th>
+                                    <th class="py-2 px-4 text-left">បរិយាយ</th>
+                                    <th class="py-2 px-4 text-right">ប្រចាំខែ</th>
+                                    <th class="py-2 px-4 text-right">ប្រចាំឆ្នាំ</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="py-2 px-4" rowspan="4">បុគ្គលិកជួល</td>
+                                    <td class="py-2 px-4">អ្នកគ្រប់គ្រងគម្រោង</td>
+                                    <td class="py-2 px-4 text-right">1,000</td>
+                                    <td class="py-2 px-4 text-right">12,000</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2 px-4">បង្កើតមាតិការ</td>
+                                    <td class="py-2 px-4 text-right">600</td>
+                                    <td class="py-2 px-4 text-right">7,200</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2 px-4">អ្នកគ្រប់គ្រងបណ្តាញសង្គម</td>
+                                    <td class="py-2 px-4 text-right">400</td>
+                                    <td class="py-2 px-4 text-right">4,800</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2 px-4">គ្រូបង្គោល</td>
+                                    <td class="py-2 px-4 text-right">1,000</td>
+                                    <td class="py-2 px-4 text-right">12,000</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2 px-4 font-bold" colspan="2">សរុបរង</td>
+                                    <td class="py-2 px-4 text-right font-bold">3,000</td>
+                                    <td class="py-2 px-4 text-right font-bold">36,000</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2 px-4" rowspan="4">ការផ្សព្វផ្សាយ</td>
+                                    <td class="py-2 px-4">Facebook Ads</td>
+                                    <td class="py-2 px-4 text-right">2,000</td>
+                                    <td class="py-2 px-4 text-right">24,000</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2 px-4">TikTok Ads</td>
+                                    <td class="py-2 px-4 text-right">2,000</td>
+                                    <td class="py-2 px-4 text-right">24,000</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2 px-4">YouTube Ads</td>
+                                    <td class="py-2 px-4 text-right">2,000</td>
+                                    <td class="py-2 px-4 text-right">24,000</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2 px-4">Content & Video Production</td>
+                                    <td class="py-2 px-4 text-right">1,000</td>
+                                    <td class="py-2 px-4 text-right">12,000</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-2 px-4 font-bold" colspan="2">សរុបរង</td>
+                                    <td class="py-2 px-4 text-right font-bold">7,000</td>
+                                    <td class="py-2 px-4 text-right font-bold">84,000</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card mt-4">
+                <h2 class="text-xl font-bold mb-4">ផែនការគ្រប់គ្រងហិរញ្ញវត្ថុ</h2>
+                <div class="space-y-4">
+                    <div>
+                        <h3 class="font-bold mb-2">១. យុទ្ធសាស្ត្រគ្រប់គ្រងចំណាយ</h3>
+                        <ul class="list-disc list-inside text-sm text-gray-600">
+                            <li>បង្កើតប្រព័ន្ធតាមដានការចំណាយប្រចាំខែ</li>
+                            <li>កំណត់ថវិកាជាក់លាក់សម្រាប់គម្រោងនីមួយៗ</li>
+                            <li>រក្សាថវិកាបម្រុងយ៉ាងតិច 10%</li>
+                            <li>ធ្វើសវនកម្មផ្ទៃក្នុងរៀងរាល់ត្រីមាស</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="font-bold mb-2">២. យុទ្ធសាស្ត្ររកមូលនិធិបន្ថែម</h3>
+                        <ul class="list-disc list-inside text-sm text-gray-600">
+                            <li>បង្កើតក្រុមការងាររកមូលនិធិ</li>
+                            <li>រៀបចំឯកសារគម្រោងសម្រាប់ដាក់ស្នើសុំមូលនិធិ</li>
+                            <li>បង្កើតទំនាក់ទំនងជាមួយម្ចាស់ជំនួយ</li>
+                            <li>ចូលរួមវេទិកាមូលនិធិនានា</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="font-bold mb-2">៣. ការវាស់វែងប្រសិទ្ធភាពហិរញ្ញវត្ថុ</h3>
+                        <ul class="list-disc list-inside text-sm text-gray-600">
+                            <li>អត្រាចំណាយធៀបនឹងផលប្រយោជន៍</li>
+                            <li>ការសន្សំសំចៃថវិកា</li>
+                            <li>ចំនួនអ្នកទទួលផលធៀបនឹងការចំណាយ</li>
+                            <li>និរន្តរភាពហិរញ្ញវត្ថុរយៈពេលវែង</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Metrics Tab -->
+        <div id="metrics" class="tab-content">
+            <div class="grid gap-4 grid-cols-1 md:grid-cols-2">
+                <div class="card">
+                    <h2 class="text-xl font-bold mb-4">សូចនាករអនឡាញ</h2>
+                    <div class="space-y-4">
+                        <div>
+                            <h3 class="font-bold mb-2">១. ការវាស់វែងប្រព័ន្ធឌីជីថល</h3>
+                            <ul class="list-disc list-inside text-sm text-gray-600">
+                                <li>ចំនួនអ្នកចុះឈ្មោះថ្មី</li>
+                                <li>អត្រាការចូលរួម</li>
+                                <li>ការចែករំលែកមាតិកា</li>
+                                <li>ចំនួនអ្នកតាមដាន</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="font-bold mb-2">២. ការវាស់វែងមាតិកា</h3>
+                            <ul class="list-disc list-inside text-sm text-gray-600">
+                                <li>ចំនួនអ្នកមើលវីដេអូ</li>
+                                <li>រយៈពេលមើលជាមធ្យម</li>
+                                <li>អត្រាចុចចូល</li>
+                                <li>ការចែករំលែក</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="font-bold mb-2">៣. ការវាស់វែងការសិក្សា</h3>
+                            <ul class="list-disc list-inside text-sm text-gray-600">
+                                <li>ចំនួនវគ្គសិក្សាអនឡាញ</li>
+                                <li>អត្រាបញ្ចប់ការសិក្សា</li>
+                                <li>ពិន្ទុតេស្ត និងលំហាត់</li>
+                                <li>ការវាយតម្លៃពីសិស្ស</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h2 class="text-xl font-bold mb-4">សូចនាករក្រៅប្រព័ន្ធអនឡាញ</h2>
+                    <div class="space-y-4">
+                        <div>
+                            <h3 class="font-bold mb-2">១. វគ្គបណ្តុះបណ្តាល</h3>
+                            <ul class="list-disc list-inside text-sm text-gray-600">
+                                <li>ចំនួនអ្នកចូលរួម</li>
+                                <li>អត្រាបញ្ចប់ការសិក្សា</li>
+                                <li>កម្រិតពេញចិត្ត</li>
+                                <li>ការអនុវត្តជាក់ស្តែង</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="font-bold mb-2">២. ផលប៉ះពាល់សហគមន៍</h3>
+                            <ul class="list-disc list-inside text-sm text-gray-600">
+                                <li>ចំនួនសហគមន៍ដែលបានគ្របដណ្តប់</li>
+                                <li>គម្រោងសហគមន៍ដែលបានអនុវត្ត</li>
+                                <li>ចំនួនអ្នកទទួលផលប្រយោជន៍</li>
+                                <li>ការផ្លាស់ប្តូរឥរិយាបថ</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="font-bold mb-2">៣. ការគ្រប់គ្រងគុណភាព</h3>
+                            <ul class="list-disc list-inside text-sm text-gray-600">
+                                <li>របាយការណ៍វឌ្ឍនភាព</li>
+                                <li>ការវិភាគទិន្នន័យ</li>
+                                <li>មតិយោបល់អ្នកចូលរួម</li>
+                                <li>ការតាមដានការអនុវត្ត</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
